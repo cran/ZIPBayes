@@ -1,0 +1,15 @@
+useDynLib(ZIPBayes, .registration = TRUE)
+
+
+export(ZIP, ZIPMErr, ZIPExt, ZIPInt)
+export(summary.ZIPBayes)
+# export(ZI_GenerateV,ZI_GeneratePoiPar_Binary,ZI_GenerateJoint,ZI_GenerateU1,ZI_GenerateU2,ZI_GenerateBetaMetro,ZI_GenerateBigJoint,ZI_GenerateAlphaMNMetro)
+# export(ZI_GenerateZpZmJoint)
+
+
+importFrom(Rcpp, evalCpp)
+importFrom(MASS, mvrnorm)
+importFrom("stats", "dbinom", "dpois", "pnorm", "rbinom", "rexp",
+                "rgamma", "rnorm", "rpois", "runif", "setNames", "quantile")
+
+S3method(summary, ZIPBayes)
