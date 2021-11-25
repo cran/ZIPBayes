@@ -21,16 +21,16 @@ ZIPInt (Ystar, Covarmainphi, Covarmainmu, Covarplus, Covarminus,
 a count vector of length \eqn{n} specifying the error-prone response in the zero-inflated Poisson model.
 }
   \item{Covarmainphi}{
-a \eqn{n x p_1} dimensional data.frame or matrix of the covariate data with respect to the probability component of the zero-inflated Poisson model
+a \eqn{n \times p_1} dimensional data.frame or matrix of the covariate data with respect to the probability component of the zero-inflated Poisson model
 }
   \item{Covarmainmu}{
-a \eqn{n x p_2} dimensional data.frame or matrix of the covariate data with respect to the mean component of the zero-inflated Poisson model
+a \eqn{n \times p_2} dimensional data.frame or matrix of the covariate data with respect to the mean component of the zero-inflated Poisson model
 }
   \item{Covarplus}{
-a \eqn{n x q_1} dimensional data.frame or matrix of the covariate data for the measurement error model of the add-in error process
+a \eqn{n \times q_1} dimensional data.frame or matrix of the covariate data for the measurement error model of the add-in error process
 }
   \item{Covarminus}{
-a \eqn{n x q_2} dimensional data.frame or matrix of the covariate data for the measurement error model of the leave-out error process
+a \eqn{n \times q_2} dimensional data.frame or matrix of the covariate data for the measurement error model of the leave-out error process
 }
   \item{Ystarval}{
 a count vector of length \eqn{m} specifying the  error-prone response in the validation data.
@@ -39,16 +39,16 @@ a count vector of length \eqn{m} specifying the  error-prone response in the val
 a count vector of length \eqn{m} specifying the precisely measured response in the validation data.
 }
 \item{Covarvalmainphi}{
-a \eqn{m x p_1} dimensional data.frame or matrix of the covariate for validation data with respect to the probability component of ZIP model
+a \eqn{m \times p_1} dimensional data.frame or matrix of the covariate for validation data with respect to the probability component of ZIP model
 }
   \item{Covarvalmainmu}{
-a \eqn{p_2} dimensional data.frame or matrix of the covariate for validation data with respect to the mean component of ZIP model
+a \eqn{m \times p_2} dimensional data.frame or matrix of the covariate for validation data with respect to the mean component of ZIP model
 }
 \item{Covarvalplus}{
-a \eqn{m x q_1} dimensional data.frame or matrix of the covariate for validation data of the add-in error process
+a \eqn{m \times q_1} dimensional data.frame or matrix of the covariate for validation data of the add-in error process
 }
   \item{Covarvalminus}{
-a \eqn{m x q_2} dimensional data.frame or matrix of the covariate  for validation data of the leave-out error process
+a \eqn{m \times q_2} dimensional data.frame or matrix of the covariate  for validation data of the leave-out error process
 }
   \item{betaphi}{
 a vector of length \eqn{p_1} specifying the initial values of the parameters in the probability component of the zero-inflated Poisson model
@@ -94,7 +94,7 @@ a integer specify the number of the generation of MCMC algorithm
 }
 }
 \details{
-Comparing to the ZIPExt function for the external validation study, this function has an addition component -- covariates of response model in the validation data. Here, the argument ``Covarvalmainphi" and ``Covarvalmainmu" are new for the sceanrio with external validation.  
+Comparing to the ZIPExt function for the external validation study, this function has an addition component -- covariates of response model in the validation data. Here, the argument ``Covarvalmainphi'' and ``Covarvalmainmu'' are new for the sceanrio with external validation.  
 }
 \value{
 \item{BayesResults}{the list of trace of generated parameters for each component of the models. Data frame "betaphi_trace" corresponds to the probability component of ZIP response model; "betamu_trace" refers to the mean component of the ZIP response model. Data frames "alphaplus_trace" and "alphaminus_trace", respectively, correspond to the add-in error and leave-out error process in the measruement error model.}
@@ -112,7 +112,7 @@ Qihuang Zhang and Grace Y. Yi
 }
 \examples{
 data(datasimInt)
-
+set.seed(0)
 result <-  ZIPInt(Ystar = datasimInt$main$Ystar,
                   Covarmainphi = datasimInt$main[,c("intercept","X1")],
                   Covarmainmu = datasimInt$main[,c("intercept","X2")],

@@ -18,10 +18,10 @@ ZIP(Y, Covarmainphi, Covarmainmu,
 a count vector of length \eqn{n} specifying response in the zero-inflated Poisson model.
 }
   \item{Covarmainphi}{
-a \eqn{n x p_1} dimensional data.frame or matrix of  data with respect to the probability component of the zero-inflated Poisson model. 
+a \eqn{n \times p_1} dimensional data.frame or matrix of  data with respect to the probability component of the zero-inflated Poisson model. 
 }
   \item{Covarmainmu}{
-a \eqn{n x p_2} dimensional data.frame or matrix of  data with respect to the mean component of the zero-inflated Poisson model. 
+a \eqn{n \times p_2} dimensional data.frame or matrix of  data with respect to the mean component of the zero-inflated Poisson model. 
 }
   \item{betaphi}{
 a vector of length \eqn{p_1} specifying the initial values of the parameters in the probability component of the zero-inflated Poisson model
@@ -64,7 +64,7 @@ Qihuang Zhang and Grace Y. Yi
 }
 \examples{
 data(datasim)
-
+set.seed(0)
 example_ZIP <- ZIP( Y = datasim$Ystar,
                          Covarmainphi = datasim[,c("intercept","X1")],
                          Covarmainmu = datasim[,c("intercept","X2")],

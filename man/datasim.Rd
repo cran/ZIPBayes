@@ -7,5 +7,5 @@
 }
 \usage{data(datasim)
 }
-\format{A data.frame of 6 columns. ``Ystar" refers to the error-prone response. ``Y" refers to the true count response. "X1" and "X2" are covariates in the response model. ``Xplus" and ``Xminus" are the covariates for the measurement error model. }
+\format{A data.frame of 6 columns. ``Ystar'' refers to the error-prone response. ``Y'' refers to the true count response. "X1" and "X2" are covariates in the response model. ``Xplus'' and ``Xminus'' are the covariates for the measurement error model. }
 \keyword{datasets}

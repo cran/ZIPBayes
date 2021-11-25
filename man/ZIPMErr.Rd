@@ -19,16 +19,16 @@ ZIPMErr (Ystar, Covarmainphi, Covarmainmu, Covarplus, Covarminus,
 a count vector of length \eqn{n} specifying the error-prone response in the zero-inflated Poisson model.
 }
   \item{Covarmainphi}{
-a \eqn{n x p_1} dimensional data.frame or matrix of the covariate data with respect to the probability component of the zero-inflated Poisson model
+a \eqn{n \times p_1} dimensional data.frame or matrix of the covariate data with respect to the probability component of the zero-inflated Poisson model
 }
   \item{Covarmainmu}{
-a \eqn{n x p_2} dimensional data.frame or matrix of the covariate data with respect to the mean component of the zero-inflated Poisson model
+a \eqn{n \times p_2} dimensional data.frame or matrix of the covariate data with respect to the mean component of the zero-inflated Poisson model
 }
   \item{Covarplus}{
-a \eqn{n x q_1} dimensional data.frame or matrix of the covariate data for the measurement error model of the add-in error process
+a \eqn{n \times q_1} dimensional data.frame or matrix of the covariate data for the measurement error model of the add-in error process
 }
   \item{Covarminus}{
-a \eqn{n x q_1} dimensional data.frame or matrix of the covariate data for the measurement error model of the leave-out error process
+a \eqn{n \times q_1} dimensional data.frame or matrix of the covariate data for the measurement error model of the leave-out error process
 }
   \item{betaphi}{
 a vector of length \eqn{p_1} specifying the initial values of the parameters in the probability component of the zero-inflated Poisson model
@@ -93,7 +93,7 @@ Qihuang Zhang and Grace Y. Yi
 \examples{
 ## load data
 data(datasim)
-
+set.seed(0)
 example_ZIP_MErr <-  ZIPMErr (Ystar = datasim$Ystar,
                          Covarmainphi = datasim[,c("intercept","X1")],
                          Covarmainmu = datasim[,c("intercept","X2")],
